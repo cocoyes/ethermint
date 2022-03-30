@@ -5,13 +5,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/cocoyes/ethermint/ethereum/eip712"
+	"github.com/cocoyes/ethermint/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/x/auth/legacy/legacytx"
 	types2 "github.com/cosmos/cosmos-sdk/x/bank/types"
 	types3 "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/tharsis/ethermint/ethereum/eip712"
-	"github.com/tharsis/ethermint/types"
 
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
@@ -30,13 +30,13 @@ import (
 	authtx "github.com/cosmos/cosmos-sdk/x/auth/tx"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/tharsis/ethermint/app"
-	ante "github.com/tharsis/ethermint/app/ante"
-	"github.com/tharsis/ethermint/encoding"
-	"github.com/tharsis/ethermint/tests"
-	"github.com/tharsis/ethermint/x/evm/statedb"
-	evmtypes "github.com/tharsis/ethermint/x/evm/types"
-	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
+	"github.com/cocoyes/ethermint/app"
+	ante "github.com/cocoyes/ethermint/app/ante"
+	"github.com/cocoyes/ethermint/encoding"
+	"github.com/cocoyes/ethermint/tests"
+	"github.com/cocoyes/ethermint/x/evm/statedb"
+	evmtypes "github.com/cocoyes/ethermint/x/evm/types"
+	feemarkettypes "github.com/cocoyes/ethermint/x/feemarket/types"
 
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

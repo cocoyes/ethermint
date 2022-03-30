@@ -5,18 +5,18 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/cocoyes/ethermint/x/evm/statedb"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/core/vm"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/tharsis/ethermint/x/evm/statedb"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/tharsis/ethermint/crypto/ethsecp256k1"
-	"github.com/tharsis/ethermint/server/config"
-	ethermint "github.com/tharsis/ethermint/types"
-	"github.com/tharsis/ethermint/x/evm/types"
+	"github.com/cocoyes/ethermint/crypto/ethsecp256k1"
+	"github.com/cocoyes/ethermint/server/config"
+	ethermint "github.com/cocoyes/ethermint/types"
+	"github.com/cocoyes/ethermint/x/evm/types"
 )
 
 // Not valid Ethereum address

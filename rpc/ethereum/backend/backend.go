@@ -31,11 +31,11 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/tharsis/ethermint/rpc/ethereum/types"
-	"github.com/tharsis/ethermint/server/config"
-	ethermint "github.com/tharsis/ethermint/types"
-	evmtypes "github.com/tharsis/ethermint/x/evm/types"
-	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
+	"github.com/cocoyes/ethermint/rpc/ethereum/types"
+	"github.com/cocoyes/ethermint/server/config"
+	ethermint "github.com/cocoyes/ethermint/types"
+	evmtypes "github.com/cocoyes/ethermint/x/evm/types"
+	feemarkettypes "github.com/cocoyes/ethermint/x/feemarket/types"
 )
 
 // Backend implements the functionality shared within namespaces.
