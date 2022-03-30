@@ -30,7 +30,9 @@ func (k Keeper) GetBaseFee(ctx sdk.Context) *big.Int {
 	if params.NoBaseFee {
 		return nil
 	}
-
+	if true {
+		return big.NewInt(0)
+	}
 	return params.BaseFee.BigInt()
 }
 
