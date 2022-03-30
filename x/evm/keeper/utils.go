@@ -24,11 +24,11 @@ func (k Keeper) DeductTxCostsFromUserBalance(
 	isContractCreation := txData.GetTo() == nil
 
 	// fetch sender account from signature
-	_, err := authante.GetSignerAcc(ctx, k.accountKeeper, msgEthTx.GetFrom())
+	authante.GetSignerAcc(ctx, k.accountKeeper, msgEthTx.GetFrom())
 	// todo change fee to zero
-	if err != nil && false {
+	/*if err != nil{
 		return nil, sdkerrors.Wrapf(err, "account not found for sender %s", msgEthTx.From)
-	}
+	}*/
 
 	gasLimit := txData.GetGas()
 
