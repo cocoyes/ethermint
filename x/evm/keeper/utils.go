@@ -24,7 +24,7 @@ func (k Keeper) DeductTxCostsFromUserBalance(
 	isContractCreation := txData.GetTo() == nil
 
 	// fetch sender account from signature
-	authante.GetSignerAcc(ctx, k.accountKeeper, msgEthTx.GetFrom())
+	signerAcc, _ := authante.GetSignerAcc(ctx, k.accountKeeper, msgEthTx.GetFrom())
 	// todo change fee to zero
 	/*if err != nil{
 		return nil, sdkerrors.Wrapf(err, "account not found for sender %s", msgEthTx.From)
@@ -67,7 +67,12 @@ func (k Keeper) DeductTxCostsFromUserBalance(
 		feeAmt = txData.Fee()
 	}
 
-	if feeAmt.Sign() == 0 {
+	/*if feeAmt.Sign() == 0 {
+		// zero fee, no need to deduct
+		return sdk.NewCoins(), nil
+	}*/
+	//todo change fee to zero
+	if true {
 		// zero fee, no need to deduct
 		return sdk.NewCoins(), nil
 	}
@@ -76,13 +81,14 @@ func (k Keeper) DeductTxCostsFromUserBalance(
 
 	// deduct the full gas cost from the user balance
 	// todo change fee to zero
-	/*if err := authante.DeductFees(k.bankKeeper, ctx, signerAcc, fees); err != nil {
-		return nil, sdkerrors.Wrapf(
+	if err := authante.DeductFees(k.bankKeeper, ctx, signerAcc, fees); err != nil {
+		/*return nil, sdkerrors.Wrapf(
 			err,
 			"failed to deduct full gas cost %s from the user %s balance",
 			fees, msgEthTx.From,
-		)
-	}*/
+		)*/
+		return fees, nil
+	}
 	return fees, nil
 }
 
